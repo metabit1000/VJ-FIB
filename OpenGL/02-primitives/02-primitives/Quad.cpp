@@ -13,7 +13,7 @@ Quad *Quad::createQuad(float x, float y, float width, float height, ShaderProgra
 
 Quad::Quad(float x, float y, float width, float height, ShaderProgram &program)
 {
-	float vertices[12] = {x, y, x + width-0.10, y, x + width-0.10, y + height, x, y, x + width-0.10, y + height, x, y + height};
+	float vertices[12] = {x, y, x + width, y, x + width, y + height + 0.15f, x, y, x + width, y + height + 0.15f, x, y + height + 0.15f};
 
 	glGenVertexArrays(1, &vao);
 	glBindVertexArray(vao);

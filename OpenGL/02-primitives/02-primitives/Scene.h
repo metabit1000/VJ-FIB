@@ -3,7 +3,7 @@
 
 
 #include "ShaderProgram.h"
-#include "Quad.h"
+#include "Circle.h";
 
 
 // Scene contains all the entities of our game.
@@ -25,7 +25,8 @@ private:
 	void initShaders();
 
 private:
-	Quad *quads[4];
+	//Quad *quads[4];
+	Circle* cercles[4];
 	ShaderProgram program;
 
 };

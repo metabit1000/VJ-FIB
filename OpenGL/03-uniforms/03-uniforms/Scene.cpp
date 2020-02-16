@@ -36,13 +36,17 @@ void Scene::render()
 	float value = (sin(currentTime / 1000.f) + 1.0f) / 2.0f;
 
 	program.use();
-	program.setUniform4f("color", value, value, value, 1.0f);
+	program.setUniform4f("color", 1.0f, 1.0f, 1.0f, 1.0f);
+	program.setUniform2f("scalar", 0.2f, 1.2f); //hay que poner antes el uniform scalar en "simple.vert"
 	quads[0]->render();
-	program.setUniform4f("color", value, 0, 0, 1.0f);
+	program.setUniform4f("color", 1.0f, value, value, 1.0f);
+	program.setUniform2f("scalar", 1.8f, 1.2f);
 	quads[1]->render();
-	program.setUniform4f("color", 0, value, 0, 1.0f);
+	program.setUniform4f("color", value, 1.0f, value, 1.0f);
+	program.setUniform2f("scalar", 1.2f, 1.5f);
 	quads[2]->render();
-	program.setUniform4f("color", 0, 0, value, 1.0f);
+	program.setUniform4f("color", value, value, 1.0f, 1.0f);
+	program.setUniform2f("scalar", 1.5f, 0.8f);
 	quads[3]->render();
 }
 
