@@ -25,15 +25,15 @@ void Scene::init()
 	glm::vec2 texCoords[2] = {glm::vec2(0.f, 0.f), glm::vec2(1.f, 1.f)};
 
 	initShaders();
-	quad = Quad::createQuad(0.f, 0.f, 128.f, 128.f, simpleProgram);
-	texCoords[0] = glm::vec2(0.f, 0.f); texCoords[1] = glm::vec2(0.5f, 0.5f);
+	quad = Quad::createQuad(0.f, 0.f, 128.f, 128.f, simpleProgram); //quad sin textura
+	texCoords[0] = glm::vec2(0.f, 0.f); texCoords[1] = glm::vec2(0.5f, 0.5f); //cogemos el mario
 	texQuad[0] = TexturedQuad::createTexturedQuad(geom, texCoords, texProgram);
-	texCoords[0] = glm::vec2(0.5f, 0.5f); texCoords[1] = glm::vec2(1.f, 1.f);
+	texCoords[0] = glm::vec2(0.5f, 0.5f); texCoords[1] = glm::vec2(1.f, 1.f); //cogemos la estrella
 	texQuad[1] = TexturedQuad::createTexturedQuad(geom, texCoords, texProgram);
-	texCoords[0] = glm::vec2(0.f, 0.f); texCoords[1] = glm::vec2(2.f, 2.f);
+	texCoords[0] = glm::vec2(0.f, 0.f); texCoords[1] = glm::vec2(2.f, 2.f); //cogemos las rocas repetidas 4 veces
 	texQuad[2] = TexturedQuad::createTexturedQuad(geom, texCoords, texProgram);
 	// Load textures
-	texs[0].loadFromFile("images/varied.png", TEXTURE_PIXEL_FORMAT_RGBA);
+	texs[0].loadFromFile("images/varied.png", TEXTURE_PIXEL_FORMAT_RGBA); //tiene transparencia
 	texs[1].loadFromFile("images/rocks.jpg", TEXTURE_PIXEL_FORMAT_RGB);
 	projection = glm::ortho(0.f, float(CAMERA_WIDTH - 1), float(CAMERA_HEIGHT - 1), 0.f);
 	currentTime = 0.0f;

@@ -92,7 +92,7 @@ void Scene::render()
 	texProgram.setUniformMatrix4f("modelview", modelview);
 	texQuad[2]->render(texs[1]);
 	
-	text.render("Videogames!!!", glm::vec2(10, CAMERA_HEIGHT-20), 32, glm::vec4(1, 1, 1, 1));
+	text.render("Videogames!!!", glm::vec2(20, CAMERA_HEIGHT-20), 32, glm::vec4(1, 1, 1, 1));
 }
 
 void Scene::initShaders()

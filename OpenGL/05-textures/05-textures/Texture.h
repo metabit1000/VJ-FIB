@@ -9,7 +9,7 @@
 using namespace std;
 
 
-enum PixelFormat {TEXTURE_PIXEL_FORMAT_RGB, TEXTURE_PIXEL_FORMAT_RGBA};
+enum PixelFormat {TEXTURE_PIXEL_FORMAT_RGB, TEXTURE_PIXEL_FORMAT_RGBA}; //alpha = transparencoa
 
 
 // The texture class loads images an passes them to OpenGL
