@@ -43,32 +43,32 @@ void Scene::render()
 	//modelview = glm::rotate(modelview, -currentTime / 1000.f, glm::vec3(0.0f, 0.0f, 1.0f));
 	modelview = glm::translate(glm::mat4(1.0f), glm::vec3(120.f, 48.f, 0.f));
 	modelview = glm::translate(modelview, glm::vec3(64.f, 64.f, 0.f));
-	modelview = glm::translate(modelview, glm::vec3(sin(currentTime/500.0f)*100.0f, 0.0f, 0.0f));
-	modelview = glm::scale(modelview, glm::vec3(sin(currentTime/500.0f), sin(currentTime / 500.0f), 0.f));
+	modelview = glm::translate(modelview, glm::vec3(sin(currentTime/1000.0f)*100.0f, 0.0f, 0.0f));
+	modelview = glm::scale(modelview, glm::vec3((sin(currentTime / 1000.f)/2.0+0.80) , (sin(currentTime / 1000.f)/2.0 +0.80), 0.f));
 	modelview = glm::translate(modelview, glm::vec3(-64.f, -64.f, 0.f));
 	program.setUniformMatrix4f("modelview", modelview);
 	quad->render();
 
 	modelview = glm::translate(glm::mat4(1.0f), glm::vec3(384.f, 48.f, 0.f));
 	modelview = glm::translate(modelview, glm::vec3(64.f, 64.f, 0.f));
-	modelview = glm::translate(modelview, glm::vec3(sin(currentTime / 500.0f)*100.0f, 0.0f, 0.0f));
-	modelview = glm::scale(modelview, glm::vec3(sin(currentTime / 500.0f), sin(currentTime / 500.0f), 0.f));
+	modelview = glm::translate(modelview, glm::vec3(sin(currentTime / 1000.0f)*100.0f, 0.0f, 0.0f));
+	modelview = glm::scale(modelview, glm::vec3((sin(currentTime / 1000.f) / 2.0 + 0.80), (sin(currentTime / 1000.f) / 2.0 + 0.80), 0.f));
 	modelview = glm::translate(modelview, glm::vec3(-64.f, -64.f, 0.f));
 	program.setUniformMatrix4f("modelview", modelview);
 	quad->render();
 
 	modelview = glm::translate(glm::mat4(1.0f), glm::vec3(128.f, 304.f, 0.f));
 	modelview = glm::translate(modelview, glm::vec3(64.f, 64.f, 0.f));
-	modelview = glm::translate(modelview, glm::vec3(sin(currentTime / 500.0f)*100.0f, 0.0f, 0.0f));
-	modelview = glm::scale(modelview, glm::vec3(sin(currentTime / 500.0f), sin(currentTime / 500.0f), 0.f));
+	modelview = glm::translate(modelview, glm::vec3(sin(currentTime / 1000.0f)*100.0f, 0.0f, 0.0f));
+	modelview = glm::scale(modelview, glm::vec3((sin(currentTime / 1000.f) / 2.0 + 0.80), (sin(currentTime / 1000.f) / 2.0 + 0.80), 0.f));
 	modelview = glm::translate(modelview, glm::vec3(-64.f, -64.f, 0.f));
 	program.setUniformMatrix4f("modelview", modelview);
 	quad->render();
 
 	modelview = glm::translate(glm::mat4(1.0f), glm::vec3(384.f, 304.f, 0.f));
 	modelview = glm::translate(modelview, glm::vec3(64.f, 64.f, 0.f));
-	modelview = glm::translate(modelview, glm::vec3(sin(currentTime / 500.0f)*100.0f, 0.0f, 0.0f));
-	modelview = glm::scale(modelview, glm::vec3(sin(currentTime / 500.0f), sin(currentTime / 500.0f), 0.f));
+	modelview = glm::translate(modelview, glm::vec3(sin(currentTime / 1000.0f)*100.0f, 0.0f, 0.0f));
+	modelview = glm::scale(modelview, glm::vec3((sin(currentTime / 1000.f) / 2.0 + 0.80), (sin(currentTime / 1000.f) / 2.0 + 0.80), 0.f));
 	modelview = glm::translate(modelview, glm::vec3(-64.f, -64.f, 0.f));
 	program.setUniformMatrix4f("modelview", modelview);
 	quad->render();
