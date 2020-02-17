@@ -25,16 +25,16 @@ void Scene::init()
 	glm::vec2 texCoords[2] = {glm::vec2(0.f, 0.f), glm::vec2(1.f, 1.f)};
 
 	initShaders();
-	quad = Quad::createQuad(0.f, 0.f, 128.f, 128.f, simpleProgram); //quad sin textura
-	texCoords[0] = glm::vec2(0.f, 0.f); texCoords[1] = glm::vec2(0.5f, 0.5f); //cogemos el mario
+	//quad = Quad::createQuad(0.f, 0.f, 128.f, 128.f, simpleProgram); //quad sin textura
+	texCoords[0] = glm::vec2(0.f, 0.5f); texCoords[1] = glm::vec2(0.5f, 1.f); //cogemos el bolet
 	texQuad[0] = TexturedQuad::createTexturedQuad(geom, texCoords, texProgram);
-	texCoords[0] = glm::vec2(0.5f, 0.5f); texCoords[1] = glm::vec2(1.f, 1.f); //cogemos la estrella
-	texQuad[1] = TexturedQuad::createTexturedQuad(geom, texCoords, texProgram);
-	texCoords[0] = glm::vec2(0.f, 0.f); texCoords[1] = glm::vec2(2.f, 2.f); //cogemos las rocas repetidas 4 veces
-	texQuad[2] = TexturedQuad::createTexturedQuad(geom, texCoords, texProgram);
+	//texCoords[0] = glm::vec2(0.f, 0.f); texCoords[1] = glm::vec2(0.5f, 0.5f); //cogemos el mario
+	//texQuad[1] = TexturedQuad::createTexturedQuad(geom, texCoords, texProgram);
+	//texCoords[0] = glm::vec2(0.f, 0.f); texCoords[1] = glm::vec2(2.f, 2.f); //cogemos las rocas repetidas 4 veces
+	//texQuad[2] = TexturedQuad::createTexturedQuad(geom, texCoords, texProgram);
 	// Load textures
 	texs[0].loadFromFile("images/varied.png", TEXTURE_PIXEL_FORMAT_RGBA); //tiene transparencia
-	texs[1].loadFromFile("images/rocks.jpg", TEXTURE_PIXEL_FORMAT_RGB);
+	//texs[1].loadFromFile("images/rocks.jpg", TEXTURE_PIXEL_FORMAT_RGB);
 	projection = glm::ortho(0.f, float(CAMERA_WIDTH - 1), float(CAMERA_HEIGHT - 1), 0.f);
 	currentTime = 0.0f;
 }
@@ -48,7 +48,7 @@ void Scene::render()
 {
 	glm::mat4 modelview;
 
-	simpleProgram.use();
+	/*simpleProgram.use();
 	simpleProgram.setUniformMatrix4f("projection", projection);
 	simpleProgram.setUniform4f("color", 0.2f, 0.2f, 0.8f, 1.0f);
 
@@ -57,20 +57,20 @@ void Scene::render()
 	modelview = glm::rotate(modelview, -currentTime / 1000.f, glm::vec3(0.0f, 0.0f, 1.0f));
 	modelview = glm::translate(modelview, glm::vec3(-64.f, -64.f, 0.f));
 	simpleProgram.setUniformMatrix4f("modelview", modelview);
-	quad->render();
+	quad->render(); */
 
 	texProgram.use();
 	texProgram.setUniformMatrix4f("projection", projection);
 	texProgram.setUniform4f("color", 1.0f, 1.0f, 1.0f, 1.0f);
 
-	modelview = glm::translate(glm::mat4(1.0f), glm::vec3(384.f, 48.f, 0.f));
+	modelview = glm::translate(glm::mat4(1.0f), glm::vec3(195.f, 200.f, 0.f));
 	modelview = glm::translate(modelview, glm::vec3(64.f, 64.f, 0.f));
-	modelview = glm::rotate(modelview, currentTime / 1000.f, glm::vec3(0.0f, 0.0f, 1.0f));
+	modelview = glm::translate(modelview, glm::vec3((sin(currentTime / 700.f)) * 285.f + 60.f, 0.0f, 0.0f));
 	modelview = glm::translate(modelview, glm::vec3(-64.f, -64.f, 0.f));
 	texProgram.setUniformMatrix4f("modelview", modelview);
 	texQuad[0]->render(texs[0]);
 
-	modelview = glm::translate(glm::mat4(1.0f), glm::vec3(128.f, 304.f, 0.f));
+	/*modelview = glm::translate(glm::mat4(1.0f), glm::vec3(128.f, 304.f, 0.f));
 	modelview = glm::translate(modelview, glm::vec3(64.f, 64.f, 0.f));
 	modelview = glm::rotate(modelview, currentTime / 1000.f, glm::vec3(0.0f, 0.0f, 1.0f));
 	modelview = glm::translate(modelview, glm::vec3(-64.f, -64.f, 0.f));
@@ -82,7 +82,7 @@ void Scene::render()
 	modelview = glm::rotate(modelview, -currentTime / 1000.f, glm::vec3(0.0f, 0.0f, 1.0f));
 	modelview = glm::translate(modelview, glm::vec3(-64.f, -64.f, 0.f));
 	texProgram.setUniformMatrix4f("modelview", modelview);
-	texQuad[2]->render(texs[1]);
+	texQuad[2]->render(texs[1]);*/
 }
 
 void Scene::initShaders()
