@@ -25,18 +25,15 @@ void Scene::init()
 	glm::vec2 texCoords[2] = {glm::vec2(0.f, 0.f), glm::vec2(1.f, 1.f)};
 
 	initShaders();
-	quad = Quad::createQuad(0.f, 0.f, 128.f, 128.f, simpleProgram);
-	texCoords[0] = glm::vec2(0.f, 0.f); texCoords[1] = glm::vec2(0.5f, 0.5f);
+	quad = Quad::createQuad(0.f, 0.f, 128.f, 128.f, simpleProgram); //quad sin textura
+	texCoords[0] = glm::vec2(0.f, 0.5f); texCoords[1] = glm::vec2(0.5f, 1.f); //cogemos el bolet
 	texQuad[0] = TexturedQuad::createTexturedQuad(geom, texCoords, texProgram);
-	texCoords[0] = glm::vec2(0.5f, 0.5f); texCoords[1] = glm::vec2(1.f, 1.f);
-	texQuad[1] = TexturedQuad::createTexturedQuad(geom, texCoords, texProgram);
-	texCoords[0] = glm::vec2(0.f, 0.f); texCoords[1] = glm::vec2(2.f, 2.f);
-	texQuad[2] = TexturedQuad::createTexturedQuad(geom, texCoords, texProgram);
+	texCoords[0] = glm::vec2(0.f, 0.f); texCoords[1] = glm::vec2(8.f, 1.9f); //cogemos el brick
+	glm::vec2 geom2[2] = { glm::vec2(0.f, 0.f), glm::vec2(128.f, 128.f) };
+	texQuad[1] = TexturedQuad::createTexturedQuad(geom2, texCoords, texProgram);
 	// Load textures
-	texs[0].loadFromFile("images/varied.png", TEXTURE_PIXEL_FORMAT_RGBA);
-	texs[0].setMagFilter(GL_NEAREST);
-	texs[1].loadFromFile("images/rocks.jpg", TEXTURE_PIXEL_FORMAT_RGB);
-	texs[1].setMagFilter(GL_NEAREST);
+	texs[0].loadFromFile("images/varied.png", TEXTURE_PIXEL_FORMAT_RGBA); //tiene transparencia
+	texs[1].loadFromFile("images/brick.jpg", TEXTURE_PIXEL_FORMAT_RGBA);
 	projection = glm::ortho(0.f, float(CAMERA_WIDTH - 1), float(CAMERA_HEIGHT - 1), 0.f);
 	currentTime = 0.0f;
 	
@@ -58,41 +55,43 @@ void Scene::render()
 
 	simpleProgram.use();
 	simpleProgram.setUniformMatrix4f("projection", projection);
-	simpleProgram.setUniform4f("color", 0.2f, 0.2f, 0.8f, 1.0f);
+	simpleProgram.setUniform4f("color", 0.3f, 0.3f, 1.0f, 1.0f);
 
 	modelview = glm::translate(glm::mat4(1.0f), glm::vec3(128.f, 48.f, 0.f));
 	modelview = glm::translate(modelview, glm::vec3(64.f, 64.f, 0.f));
-	modelview = glm::rotate(modelview, -currentTime / 1000.f, glm::vec3(0.0f, 0.0f, 1.0f));
+	modelview = glm::scale(modelview, glm::vec3(7.f, 7.f, 0.f));
 	modelview = glm::translate(modelview, glm::vec3(-64.f, -64.f, 0.f));
 	simpleProgram.setUniformMatrix4f("modelview", modelview);
-	quad->render();
+	quad->render(); 
 
 	texProgram.use();
 	texProgram.setUniformMatrix4f("projection", projection);
 	texProgram.setUniform4f("color", 1.0f, 1.0f, 1.0f, 1.0f);
 
-	modelview = glm::translate(glm::mat4(1.0f), glm::vec3(384.f, 48.f, 0.f));
+	modelview = glm::translate(glm::mat4(1.0f), glm::vec3(195.f, 200.f, 0.f));
 	modelview = glm::translate(modelview, glm::vec3(64.f, 64.f, 0.f));
-	modelview = glm::rotate(modelview, currentTime / 1000.f, glm::vec3(0.0f, 0.0f, 1.0f));
+	modelview = glm::translate(modelview, glm::vec3((sin(currentTime / 700.f)) * 285.f + 60.f, 0.0f, 0.0f));
 	modelview = glm::translate(modelview, glm::vec3(-64.f, -64.f, 0.f));
 	texProgram.setUniformMatrix4f("modelview", modelview);
 	texQuad[0]->render(texs[0]);
 
-	modelview = glm::translate(glm::mat4(1.0f), glm::vec3(128.f, 304.f, 0.f));
+	/*modelview = glm::translate(glm::mat4(1.0f), glm::vec3(128.f, 304.f, 0.f));
 	modelview = glm::translate(modelview, glm::vec3(64.f, 64.f, 0.f));
 	modelview = glm::rotate(modelview, currentTime / 1000.f, glm::vec3(0.0f, 0.0f, 1.0f));
 	modelview = glm::translate(modelview, glm::vec3(-64.f, -64.f, 0.f));
 	texProgram.setUniformMatrix4f("modelview", modelview);
-	texQuad[1]->render(texs[0]);
+	texQuad[1]->render(texs[0]);*/
 
-	modelview = glm::translate(glm::mat4(1.0f), glm::vec3(384.f, 304.f, 0.f));
+	modelview = glm::translate(glm::mat4(1.0f), glm::vec3(0.f, 355.f, 0.f));
 	modelview = glm::translate(modelview, glm::vec3(64.f, 64.f, 0.f));
-	modelview = glm::rotate(modelview, -currentTime / 1000.f, glm::vec3(0.0f, 0.0f, 1.0f));
+	modelview = glm::scale(modelview,glm::vec3(9.f,1.9f,0.f));
 	modelview = glm::translate(modelview, glm::vec3(-64.f, -64.f, 0.f));
 	texProgram.setUniformMatrix4f("modelview", modelview);
-	texQuad[2]->render(texs[1]);
+	texQuad[1]->render(texs[1]);
 	
-	text.render("Videogames!!!", glm::vec2(20, CAMERA_HEIGHT-20), 32, glm::vec4(1, 1, 1, 1));
+	int rebots = 0;
+	text.render("Rebots: ", glm::vec2(20, 0), 32, glm::vec4(1, 1, 1, 1));
+	text.render(rebots, glm::vec2(20, CAMERA_HEIGHT - 20), 32, glm::vec4(1, 1, 1, 1));
 }
 
 void Scene::initShaders()
