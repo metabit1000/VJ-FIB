@@ -21,12 +21,17 @@ void Game::render()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	scene.render();
+
+	if (bolet) scene.mostrar_text();
 }
 
 void Game::keyPressed(int key)
 {
 	if(key == 27) // Escape code
 		bPlay = false;
+	if (key == 'm')
+		bolet = !bolet; //voy cambiando valor para que aparezca el texto o no
+
 	keys[key] = true;
 }
 

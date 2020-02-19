@@ -33,7 +33,9 @@ void Scene::init()
 	texQuad[1] = TexturedQuad::createTexturedQuad(geom2, texCoords, texProgram);
 	// Load textures
 	texs[0].loadFromFile("images/varied.png", TEXTURE_PIXEL_FORMAT_RGBA); //tiene transparencia
+	texs[0].setMagFilter(GL_NEAREST);
 	texs[1].loadFromFile("images/brick.jpg", TEXTURE_PIXEL_FORMAT_RGBA);
+	texs[1].setMagFilter(GL_NEAREST);
 	projection = glm::ortho(0.f, float(CAMERA_WIDTH - 1), float(CAMERA_HEIGHT - 1), 0.f);
 	currentTime = 0.0f;
 	
@@ -47,6 +49,10 @@ void Scene::init()
 void Scene::update(int deltaTime)
 {
 	currentTime += deltaTime;
+}
+
+void Scene::mostrar_text() {
+	text.render("Bolet" , glm::vec2(pos+290.f, 215), 28, glm::vec4(1, 1, 1, 1));
 }
 
 void Scene::render()
@@ -68,9 +74,10 @@ void Scene::render()
 	texProgram.setUniformMatrix4f("projection", projection);
 	texProgram.setUniform4f("color", 1.0f, 1.0f, 1.0f, 1.0f);
 
-	modelview = glm::translate(glm::mat4(1.0f), glm::vec3(195.f, 200.f, 0.f));
+	pos = (sin(currentTime / 700.f)) * 290.f;
+	modelview = glm::translate(glm::mat4(1.0f), glm::vec3(257.f, 200.f, 0.f));
 	modelview = glm::translate(modelview, glm::vec3(64.f, 64.f, 0.f));
-	modelview = glm::translate(modelview, glm::vec3((sin(currentTime / 700.f)) * 285.f + 60.f, 0.0f, 0.0f));
+	modelview = glm::translate(modelview, glm::vec3(pos, 0.0f, 0.0f));
 	modelview = glm::translate(modelview, glm::vec3(-64.f, -64.f, 0.f));
 	texProgram.setUniformMatrix4f("modelview", modelview);
 	texQuad[0]->render(texs[0]);
@@ -88,10 +95,8 @@ void Scene::render()
 	modelview = glm::translate(modelview, glm::vec3(-64.f, -64.f, 0.f));
 	texProgram.setUniformMatrix4f("modelview", modelview);
 	texQuad[1]->render(texs[1]);
-	
-	int rebots = 0;
-	text.render("Rebots: ", glm::vec2(20, 0), 32, glm::vec4(1, 1, 1, 1));
-	text.render(rebots, glm::vec2(20, CAMERA_HEIGHT - 20), 32, glm::vec4(1, 1, 1, 1));
+		
+	text.render("Rebots: " + to_string(int(((currentTime / 700.f * acos(-1.0f)) / 10.f) + 0.5f)), glm::vec2(20, CAMERA_HEIGHT - 440), 32, glm::vec4(1, 1, 1, 1));
 }
 
 void Scene::initShaders()

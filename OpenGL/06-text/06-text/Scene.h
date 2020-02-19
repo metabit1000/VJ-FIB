@@ -27,6 +27,7 @@ public:
 	void init();
 	void update(int deltaTime);
 	void render();
+	void mostrar_text();
 
 private:
 	void initShaders();
@@ -39,7 +40,8 @@ private:
 	float currentTime;
 	glm::mat4 projection;
 	Text text;
-
+	int rebots;
+	float pos;
 };
 
 
