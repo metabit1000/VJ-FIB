@@ -1,0 +1,44 @@
+﻿  BaseScene.cpp
+  creditsScene.cpp
+  Game.cpp
+C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\02-Bubble\Game.cpp(9,40): warning C4305: 'argumento': truncamiento de 'double' a 'GLclampf'
+  InstructionsScene.cpp
+C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\02-Bubble\InstructionsScene.cpp(4,1): warning C4005: 'TURN_TIME': redefinición de macro
+C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\02-Bubble\BaseScene.h(8): message : vea la definición anterior de 'TURN_TIME'
+  main.cpp
+  Map.cpp
+C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\02-Bubble\Map.cpp(80,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\02-Bubble\Map.cpp(95,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\02-Bubble\Map.cpp(114,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\02-Bubble\Map.cpp(134,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\02-Bubble\Map.cpp(201,22): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\02-Bubble\Map.cpp(219,22): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\02-Bubble\Map.cpp(238,22): warning C4018: '<': no coinciden signed/unsigned
+  MenuScene.cpp
+  Object.cpp
+  MapScene.cpp
+C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\02-Bubble\MapScene.cpp(27,9): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\02-Bubble\MapScene.cpp(84,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\02-Bubble\MapScene.cpp(146,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\02-Bubble\MapScene.cpp(150,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\02-Bubble\MapScene.cpp(158,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\02-Bubble\MapScene.cpp(166,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\02-Bubble\MapScene.cpp(177,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\02-Bubble\MapScene.cpp(211,20): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\02-Bubble\MapScene.cpp(232,20): warning C4018: '<': no coinciden signed/unsigned
+  Shader.cpp
+  ShaderProgram.cpp
+  Sprite.cpp
+  Texture.cpp
+  TileMap.cpp
+SOIL.lib(SOIL.obj) : warning LNK4075: se omite '/EDITANDCONTINUE' debido a la especificación '/OPT:ICF'
+LINK : warning LNK4098: la biblioteca predeterminada'MSVCRTD' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
+  Generando código
+  Previous IPDB not found, fall back to full compilation.
+  All 828 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Generación de código finalizada
+SOIL.lib(image_DXT.obj) : warning LNK4099: no se encontró PDB 'vc100.pdb' con 'SOIL.lib(image_DXT.obj)' o en 'C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\Release\vc100.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+SOIL.lib(image_helper.obj) : warning LNK4099: no se encontró PDB 'vc100.pdb' con 'SOIL.lib(image_helper.obj)' o en 'C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\Release\vc100.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+SOIL.lib(SOIL.obj) : warning LNK4099: no se encontró PDB 'vc100.pdb' con 'SOIL.lib(SOIL.obj)' o en 'C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\Release\vc100.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+SOIL.lib(stb_image_aug.obj) : warning LNK4099: no se encontró PDB 'vc100.pdb' con 'SOIL.lib(stb_image_aug.obj)' o en 'C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\Release\vc100.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+  02-Bubble.vcxproj -> C:\Users\joseb\Desktop\AlexAguilera\Projecte\2Dgame\baba_is_you\Release\baba_is_you.exe

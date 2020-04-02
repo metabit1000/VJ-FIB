@@ -1,0 +1,59 @@
+﻿VJ Grupo 12. 
+
+
+Joseba Sierra Montes
+(joseba.sierra@est.fib.upc.edu)
+Àlex Aguilera Martínez
+(alex.aguilera.martinez@est.fib.upc.edu)
+
+
+FUNCIONALIDADES IMPLEMENTADAS:
+
+
+- Menú de selección para escoger el nivel a jugar o ver créditos/instrucciones. 
+
+
+- Varias pantallas para explicar las instrucciones del juego que se pueden ir pasando adelante o atrás.
+
+
+- Pantalla créditos, que se puede ver seleccionando en el menú o al acabar el nivel 5.
+
+
+- Al acabar exitosamente un nivel, se pasa al siguiente automáticamente, no hace falta volver al menú.
+
+
+- El juego tiene implementados 5 nombres, 2 operadores y  5 propiedades. 
+
+
+Nombres tenemos ROCK, BABA, FLAG, WALL, SKULL
+Operadores IS, AND
+Propiedades STOP, PUSH, WIN, DEFEAT, YOU
+
+
+Cada uno de ellos tiene su comportamiento del baba is you original, por ejemplo ROCK IS YOU permite controlar todas las rocas del nivel. WALL AND ROCK IS PUSH permite que ambos objetos se puedan empujar.
+
+
+- Mecánica extra:
+
+
+Como mecánica extra, hemos tratado de añadir algo que dé un enfoque nuevo a la jugabilidad, que no sea simplemente una ampliación de contenido. 
+Hemos añadido que el baba se mueve cada X tiempo constantemente, mientras una pared de guerreros va avanzando destruyendo todo lo que se encuentra (tanto Objetos, como palabras que afectan a estos). 
+Esto añade un nuevo factor de tensión, donde es necesario pensar rápidamente para superar el mapa. A la vez que obliga al jugador a aprender de sus errores cuando muere en una zona, donde se pausa el mapa y puede estudiar que debe hacer para avanzar en el punto donde ha muerto.  
+En los mapas con esta mecánica, se ha implementado la cámara de tal manera que esta siga al jugador suavemente (con aceleración variable), de tal manera que siga dando una sensación de movimiento.
+Al fijar la velocidad del baba, los controles pueden sentirse toscos, que no responden al momento. Para paliar eso, se permite la opción de acelerar al baba, lo que da una mayor sensación de control.
+
+
+        
+INSTRUCCIONES JUEGO: 
+
+
+- El movimiento dentro del juego, tanto para controlar el baba como para moverte por el menú, se puede hacer con las FLECHAS del teclado o con las teclas AWSD. 
+
+
+- Para seleccionar una opción en el menú, se hace con la tecla ENTER.
+
+
+- En caso de querer resetear el nivel, hay que presionar la tecla R. En caso de fallar el nivel, tienes que presionar la tecla para volver a intentarlo, no se resetea automáticamente.
+
+
+- Para volver al menú, hay que presionar la tecla ESC. También, sirve para salir del juego cuando te encuentras en el menú.
