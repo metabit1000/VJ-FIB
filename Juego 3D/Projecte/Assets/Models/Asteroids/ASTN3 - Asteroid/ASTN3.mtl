@@ -1,0 +1,8 @@
+newmtl tex_0
+map_Kd ASTN3_tex_0.png
+newmtl tex_1
+map_Kd ASTN3_tex_1.png
+newmtl tex_2
+map_Kd ASTN3_tex_2.png
+newmtl tex_3
+map_Kd ASTN3_tex_3.png
