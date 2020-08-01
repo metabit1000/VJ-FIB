@@ -1,4 +1,4 @@
-# Star Clone 46 (VJ project Q2 2019-2020)
+# Star Clone 46
 
 3D videogame project developed by Alex Aguilera and Joseba Sierra based on Star Fox 64 during the subject of Videogames of Universitat Politecnica de Catalunya.  
 
